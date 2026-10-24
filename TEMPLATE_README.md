@@ -18,7 +18,7 @@ The template generates an encryption key and initial administrator password, con
 
 ## Dependencies for TREK Hosting
 
-- TREK 4.3.3, from the official `mauriceboe/trek` image pinned by digest
+- TREK 4.3.4, from the official `mauriceboe/trek` image pinned by digest
 - SQLite through `better-sqlite3`
 - Persistent Railway volume at `/app/data`
 - HTTPS and WebSocket routing on port `3000`

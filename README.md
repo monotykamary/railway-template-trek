@@ -2,13 +2,13 @@
 
 [![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/nomad?referralCode=ZqgrJ0)
 
-Deploys [TREK](https://github.com/liketrek/TREK) 4.3.3, a self-hosted collaborative travel planner, as one Railway service whose SQLite database and uploaded files live on a single volume. The template is listed on Railway under its original name, NOMAD.
+Deploys [TREK](https://github.com/liketrek/TREK) 4.3.4, a self-hosted collaborative travel planner, as one Railway service whose SQLite database and uploaded files live on a single volume. The template is listed on Railway under its original name, NOMAD.
 
 ## What this repository adds
 
 TREK's official image expects two mounts: `/app/data` for the database and `/app/uploads` for uploaded files. Railway gives a service one volume. This repository builds a thin layer over the official image so that both live on the volume mounted at `/app/data`:
 
-- `Dockerfile` starts from `docker.io/mauriceboe/trek:4.3.3`, pinned by digest, and replaces `/app/uploads` with a link to `/app/data/uploads`.
+- `Dockerfile` starts from `docker.io/mauriceboe/trek:4.3.4`, pinned by digest, and replaces `/app/uploads` with a link to `/app/data/uploads`.
 - `entrypoint.sh` creates the upload directories inside the volume at start, then runs the upstream entrypoint unchanged.
 - `railway.toml` selects the Dockerfile builder and sets the health check.
 
@@ -71,9 +71,9 @@ See the upstream release notes for the full list.
 
 ## Upstream
 
-- Source: https://github.com/liketrek/TREK/tree/v4.3.3
-- Release: https://github.com/liketrek/TREK/releases/tag/v4.3.3
-- Documentation: https://github.com/liketrek/TREK/tree/v4.3.3/wiki
+- Source: https://github.com/liketrek/TREK/tree/v4.3.4
+- Release: https://github.com/liketrek/TREK/releases/tag/v4.3.4
+- Documentation: https://github.com/liketrek/TREK/tree/v4.3.4/wiki
 - Image: https://hub.docker.com/r/mauriceboe/trek
 - License: AGPL-3.0
 
